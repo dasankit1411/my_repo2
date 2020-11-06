@@ -1,0 +1,15 @@
+{% extends 'consult/home.html'%}
+{% block body %}
+{% load static %}
+<div class="jumbotron"  id='jom1'style="background-image:url('{% static 'images/jombotron2.jpg' %}')";>
+<!--<div class="container" id='container1' align='center'>-->
+  <form class="form1" method="post">
+    <h3 style='font-weight:bold;'>Add Expert Details</h3><hr class='rounded'>
+    <br><br>
+    {{form.as_p}}
+    {%csrf_token%}
+    <input class='btn btn-success'type="submit" name="" value="Add Expert">
+  </form>
+<!--</div>-->
+</div>
+{% endblock %}

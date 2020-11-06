@@ -1,0 +1,38 @@
+{% extends 'consult/home.html' %}
+{% block body %}
+
+<br><br>
+<div class="container">
+  <h2 class='text-center'>Organisations</h2>
+  <br><br>
+  <table class='table table-hover' id="example">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Organisation Name</th>
+        <th>Type</th>
+        <th>Location</th>
+        <th>Requirement</th>
+        <th>contact</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in org %}
+      <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.type}}</td>
+        <td>{{i.location}}</td>
+        <td>{{i.requirement}}</td>
+        <td>{{i.contact}}</td>
+        <td><a href="{%url 'updateorg' i.id%}" class='btn btn-warning'><i class='fas fa-edit'></i></a></td>
+        <td><a href="{%url 'deleteorganisation' i.id%}" onclick="return confirm('Are u really want to delete')" class='btn btn-danger'><i class='fas fa-trash-alt'></i></a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

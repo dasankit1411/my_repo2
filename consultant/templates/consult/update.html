@@ -1,0 +1,19 @@
+{% extends 'consult/home.html' %}
+{% block body %}
+<h1>Update Expert Record</h1><hr>
+
+<form class=""  method="post">
+  {%csrf_token%}
+  Expert Name:<input type="text" name="name" value="{{exp.name}}">
+  <p></p>
+  Skill:<input type="text" name="skill" value="{{exp.skill}}">
+  <p></p>
+  Experience:<input type="text" name="experience" value="{{exp.experience}}">
+  <p></p>
+  Contact:<input type="text" name="contact" value="{{exp.contact}}">
+  <p></p>
+  <input type="submit" class='btn btn-danger' value="update">
+  <p></p>
+</form>
+
+{% endblock %}

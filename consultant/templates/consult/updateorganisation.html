@@ -1,0 +1,21 @@
+{% extends 'consult/home.html' %}
+{% block body %}
+<h1>Update Organisation Record</h1>
+
+<form class=""  method="post">
+  {%csrf_token%}
+  Organisation Name:<input type="text" name="name" value="{{org.name}}">
+  <p></p>
+  Type:<input type="text" name="type" value="{{org.type}}">
+  <p></p>
+  Location:<input type="text" name="location" value="{{org.location}}">
+  <p></p>
+  Requirement:<input type="text" name="requirement" value="{{org.requirement}}">
+  <p></p>
+  Contact:<input type="text" name="contact" value="{{org.contact}}">
+  <p></p>
+  <input type="submit" class='btn btn-danger' value="update">
+  <p></p>
+</form>
+
+{% endblock %}
